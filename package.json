@@ -4,7 +4,7 @@
   "description": "Base react app for development",
   "main": "server.js",
   "scripts": {
-    "start": "gulp serve"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,9 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "flux": "^2.1.1",
     "gulp-notify": "^2.2.0",
+    "keymirror": "^0.1.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }

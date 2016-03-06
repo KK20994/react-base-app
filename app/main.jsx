@@ -1,20 +1,14 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import GroceryItemList from "./components/GroceryItemList.jsx";
-var items = [
-  {
-    name: "Candy",
-  },
-  {
-    name: "Grapes"
-  },
-  {
-    name: "Oranges",
-    purchased: true
-  },
-  {
-    name: "Pens"
-  }
-]
+import GroceryItemStore from "./stores/GroceryItemStore.jsx";
+var initials = GroceryItemStore.getList().items;
+function render () {
+    ReactDOM.render(<GroceryItemList items={initials}/>, document.getElementById("app"));
+}
+GroceryItemStore.addChangeListener(function(){
+    initials = GroceryItemStore.getList().items;
+    render();
+});
+render();
 
-ReactDOM.render(<GroceryItemList items={items} />, document.getElementById("app"));
